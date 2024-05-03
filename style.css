@@ -2,8 +2,8 @@
     --cor-de-fundo: #1e1e1e;
     --verde: #6fff57;
     --branco: #ffffff;
-    --botao-ativo: #153f1b;
-    --botao-inativo: rgba(102, 153, 119, 0.5);
+    --botao-ativo: #3a375e;
+    --botao-inativo: rgba(58, 55, 94, 0.5);
     --texto-fundo: rgba(58,55,94,0.3);
 
 }
@@ -24,6 +24,7 @@ span{
     align-items:  center; /*linhas*/
     width: 100%; /*Configura 100% da página*/
     max-width: 1300px;/*(Define o tamanho máx da página como 1200px) MODELO DO PROFESSOR (o meu para ficar centralizado tem que ser 1300*/
+    margin: 0 auto;
 }
 
 .titulo-principal{
@@ -44,4 +45,28 @@ span{
     border-bottom: 4px solid var(--botao-ativo);
     border-left: 2px solid  var(--botao-ativo);
     border-right: 2px solid var(--botao-ativo);
+}
+
+.botoes{
+    display: block;
+}
+
+.botao:first-child{
+    border-radius: 20px 20px 0 0;
+}
+.botao:last-child{
+    border-radius: 0 0 20px 20px;
+}
+@media screen and (min-width: 700px) {
+    .botoes{
+        display: flex;
+    }
+
+    .botao:first-child{
+        border-radius: 20px 0 0 20px;
+    
+    }
+    .botao:last-child{
+        border-radius: 0 20px 20px 0;
+    }
 }
