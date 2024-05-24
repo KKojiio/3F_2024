@@ -9,8 +9,11 @@
 }
 
 *{
-    background-color: var(--cor-de-fundo);
     color: var(--branco);
+}
+
+body{
+    background-color: var(--cor-de-fundo);
 }
 
 span{
@@ -47,16 +50,19 @@ span{
     border-right: 2px solid var(--botao-ativo);
 }
 
-.botoes{
-    display: block;
+.ativo{
+    background-color: var(--texto-fundo);
+    border-bottom: 4px solid var(--verde);
 }
 
-.botao:first-child{
-    border-radius: 20px 20px 0 0;
+.aba-conteudo{
+    background-color: var(--texto-fundo);
+    display: none;
 }
-.botao:last-child{
-    border-radius: 0 0 20px 20px;
+.aba-conteudo, .ativo{
+    display:flex;
 }
+
 @media screen and (min-width: 700px) {
     .botoes{
         display: flex;
