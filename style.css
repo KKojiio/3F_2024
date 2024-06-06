@@ -50,7 +50,7 @@ span{
     border-right: 2px solid var(--botao-ativo);
 }
 
-.ativo{
+.botao.ativo{
     background-color: var(--texto-fundo);
     border-bottom: 4px solid var(--verde);
 }
@@ -59,9 +59,10 @@ span{
     background-color: var(--texto-fundo);
     display: none;
 }
-.aba-conteudo, .ativo{
-    display:flex;
+.aba-conteudo.ativo{
+    display: block;
 }
+
 
 @media screen and (min-width: 700px) {
     .botoes{
