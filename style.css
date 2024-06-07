@@ -54,13 +54,26 @@ span{
     background-color: var(--texto-fundo);
     border-bottom: 4px solid var(--verde);
 }
+.abas-textos{
+    background-color: var(--botao-inativo);
+    padding: 40px;
+    border-radius: 15px;
+}
 
 .aba-conteudo{
-    background-color: var(--texto-fundo);
     display: none;
 }
 .aba-conteudo.ativo{
     display: block;
+}
+.aba-conteudo-titulo-principal{
+    font-size: 30px;
+    text-align: center;
+}
+.aba-conteudo-titulo-secundario{
+    text-align: center;
+    color: var(--verde);
+    text-transform: uppercase;
 }
 
 
