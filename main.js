@@ -17,11 +17,35 @@ let segundos
 let minutos
 let horas 
 let dias 
+
+function calculaTempo(tempoObjetivo){
+    const agora = new Date()
+    let segundos
+    let minutos
+    let horas
+    let dias
+    
 segundos = (tempoObjetivo1-agora)/1000;
 minutos = (tempoObjetivo1-agora)/60;
 horas = (tempoObjetivo1-agora)/60;
 dias = (tempoObjetivo1-agora)/24;
-contador[0].textContent = `Faltam ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`
+
+segundos = Math.floor(segundos);
+minutos = Math.floor(minutos);
+horas = Math.floor(horas);
+dias = Math.floor(dias);
+
+segundos = segundos%60
+minutos = minutos%60
+horas = horas%24
+return[dias, horas, minutos, segundos]
+}
+let contadorPrimeiro = calculaTempo(tempoObjetivo1)
+contador[0].textContent = `faltam ${contadorPrimeiro[0]} dias, ${contadorPrimeiro[1]} horas ${contadorPrimeiro[2]} minutos, ${contadorPrimeiro[3]} segundos`
+let contadorSegundo = calculaTempo(tempoObjetivo2)
+contador[1].textContent = `faltam ${contadorSegundo[0]} dias, ${contadorSegundo[1]} horas ${contadorSegundo[2]} minutos, ${contadorSegundo[3]} segundos`
+
+
 
 for(let i = 0 ; i < botoes.length; i++){
     botoes[i].onclick = function(){
