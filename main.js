@@ -7,17 +7,6 @@ const tempoObjetivo1 = new Date (2024,7,6,21,30)
 const tempoObjetivo2 = new Date (2024,9,10,5,33)
 const tempoObjetivo3 = new Date (2024,7,16,10,50)
 const tempoObjetivo4 = new Date (2024,11,01,11,28)
-let agora = new Date();
-
-contador[0].textContent = tempoObjetivo1-agora
-contador[1].textContent = tempoObjetivo2-agora
-contador[2].textContent = tempoObjetivo3-agora
-contador[3].textContent = tempoObjetivo4-agora
-let segundos
-let minutos
-let horas 
-let dias 
-
 function calculaTempo(tempoObjetivo){
     const agora = new Date()
     let segundos
@@ -25,10 +14,10 @@ function calculaTempo(tempoObjetivo){
     let horas
     let dias
     
-segundos = (tempoObjetivo1-agora)/1000;
-minutos = (tempoObjetivo1-agora)/60;
-horas = (tempoObjetivo1-agora)/60;
-dias = (tempoObjetivo1-agora)/24;
+segundos = (tempoObjetivo-agora)/1000;
+minutos = (segundos)/60;
+horas = (minutos)/60;
+dias = (horas)/24;
 
 segundos = Math.floor(segundos);
 minutos = Math.floor(minutos);
@@ -41,9 +30,13 @@ horas = horas%24
 return[dias, horas, minutos, segundos]
 }
 let contadorPrimeiro = calculaTempo(tempoObjetivo1)
-contador[0].textContent = `faltam ${contadorPrimeiro[0]} dias, ${contadorPrimeiro[1]} horas ${contadorPrimeiro[2]} minutos, ${contadorPrimeiro[3]} segundos`
+contador[0].textContent = `faltam ${contadorPrimeiro[0]} dias, ${contadorPrimeiro[1]} horas, ${contadorPrimeiro[2]} minutos, ${contadorPrimeiro[3]} segundos`
 let contadorSegundo = calculaTempo(tempoObjetivo2)
-contador[1].textContent = `faltam ${contadorSegundo[0]} dias, ${contadorSegundo[1]} horas ${contadorSegundo[2]} minutos, ${contadorSegundo[3]} segundos`
+contador[1].textContent = `faltam ${contadorSegundo[0]} dias, ${contadorSegundo[1]} horas, ${contadorSegundo[2]} minutos, ${contadorSegundo[3]} segundos`
+let contadorTerceiro = calculaTempo(tempoObjetivo3)
+contador[2].textContent = `faltam ${contadorTerceiro[0]} dias, ${contadorTerceiro[1]} horas, ${contadorTerceiro[2]} minutos, ${contadorTerceiro[3]} segundos`
+let contadorQuarto = calculaTempo(tempoObjetivo4)
+contador[3].textContent = `faltam ${contadorQuarto[0]} dias, ${contadorQuarto[1]} horas, ${contadorQuarto[2]} minutos, ${contadorQuarto[3]} segundos`
 
 
 
