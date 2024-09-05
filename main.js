@@ -25,17 +25,23 @@ function calculaTempo(tempoObjetivo){
     segundos = segundos%60
     minutos = minutos%60
     horas = horas%24
-    return [dias,horas,minutos,segundos]
+    if(tempoFinal > 0){
+        return [dias,horas,minutos,segundos]
+    }else{
+        return "Prazo finalizado";
+    }
+    
 }
 
-    // let contadorPrimeiro = calculaTempo(tempoObjetivo1)
-    // contador[0].textContent = `Faltam ${contadorPrimeiro[0]} dias, ${contadorPrimeiro[1]} horas, ${contadorPrimeiro[2]} minutos e ${contadorPrimeiro[3]} segundos`
-    // let contadorSegundo = calculaTempo(tempoObjetivo2)
-    // contador[1].textContent = `Faltam ${contadorSegundo[0]} dias, ${contadorSegundo[1]} horas e ${contadorSegundo[2]} minutos e ${contadorSegundo[3]} segundos`
-    // let contadorTerceiro = calculaTempo(tempoObjetivo3)
-    // contador[2].textContent = `Faltam ${contadorTerceiro[0]} dias, ${contadorTerceiro[1]} horas e ${contadorTerceiro[2]} minutos e ${contadorTerceiro[3]} segundos`
-    // let contadorQuarto = calculaTempo(tempoObjetivo4)
-    // contador[3].textContent = `Faltam ${contadorQuarto[0]} dias, ${contadorQuarto[1]} horas e ${contadorQuarto[2]} minutos e ${contadorQuarto[3]} segundos` 
+function atualiaCronometro(){
+    document.getElementById('dias0').textcontent = calculaTempo(tempos[0]);
+    document.getElementById('horas0').textcontent = calculaTempo(tempos[1]);
+    document.getElementById('minutos0').textcontent = calculaTempo(tempos[2]);
+    document.getElementById('segundos0').textcontent = calculaTempo(tempos[3]);
+    for (let  i=0;i>contadores.legth;i++){
+        //contadores[i].textContent = calculaTempo(tempo[i]);
+    }
+}
 
 for (let i = 0; i < botoes.length; i++){
     botoes[i].onclick = function(){
